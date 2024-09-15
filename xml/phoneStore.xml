@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Store>
-	<Menu>
-		<Opciones>
-			<Opcion Url="/Default.aspx?Id=0" Texto="Inicio" Id="0"></Opcion>
-			<Opcion Url="/Default.aspx?Id=1" Texto="Teléfonos" Id="1"></Opcion>
-			<Opcion Url="/Default.aspx?Id=2" Texto="Relojes" Id="2"></Opcion>
-			<Opcion Url="/Default.aspx?Id=3" Texto="Servicios Técnicos" Id="3"></Opcion>
-			<Opcion Url="/Default.aspx?Id=4" Texto="Contacto" Id="4"></Opcion>
-		</Opciones>
-	</Menu>
+	<Opciones>
+		<Opcion Url="/Default.aspx?Id=0" Texto="Inicio" Id="0"></Opcion>
+		<Opcion Url="/Default.aspx?Id=1" Texto="Teléfonos" Id="1"></Opcion>
+		<Opcion Url="/Default.aspx?Id=2" Texto="Relojes" Id="2"></Opcion>
+		<Opcion Url="/Default.aspx?Id=3" Texto="Servicios Técnicos" Id="3"></Opcion>
+		<Opcion Url="/Default.aspx?Id=4" Texto="Contacto" Id="4"></Opcion>
+	</Opciones>
 
 	<Productos>
 		<Categoria Nombre="Teléfonos">
-			<Producto Nombre="iPhone 14 Pro" ID="1">
-				<Descripcion><![CDATA[Apple iPhone 14 Pro con 128GB de almacenamiento y cámara de 48MP.]]></Descripcion>
-				<Precio>$1,200</Precio>
-				<Imagen>assets/img/iphone14pro.jpg</Imagen>
+			<Producto Nombre="Samsung Galaxy S24 Ultra" ID="1">
+				<Descripcion><![CDATA[Gold 512GB 12gb Ram 200MPX pantalla 2k 120hz antirreflejante]]></Descripcion>
+				<Precio>$1,300</Precio>
+				<Imagen>assets/img/S24.png</Imagen>
 			</Producto>
 			<Producto Nombre="Samsung Galaxy S23 (Usado)" ID="2" Usado="Sí">
 				<Descripcion><![CDATA[Samsung Galaxy S23 con pantalla AMOLED de 6.5 pulgadas y 256GB de almacenamiento. Producto usado en excelentes condiciones.]]></Descripcion>
@@ -62,7 +60,7 @@
 				<Precio>$400</Precio>
 				<Imagen>assets/img/applewatch9.jpg</Imagen>
 			</Producto>
-            <Producto Nombre="Apple Watch Series 9" ID="1">
+			<Producto Nombre="Apple Watch Series 9" ID="1">
 				<Descripcion><![CDATA[Reloj inteligente de Apple con pantalla siempre activa y sensor de oxígeno en sangre.]]></Descripcion>
 				<Precio>$400</Precio>
 				<Imagen>assets/img/applewatch9.jpg</Imagen>
@@ -171,5 +169,6 @@
 	</Datos>
 
 </Store>
+
 
 
