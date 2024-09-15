@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PhoneStore", ".", "{83F58515-1AC1-410A-B56F-12BA8ABEF297}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52099"
+		Debug.AspNetCompiler.PhysicalPath = "..\PhoneStore\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52099\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52099"
+		Release.AspNetCompiler.PhysicalPath = "..\PhoneStore\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52099\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52099"
+		SlnRelativePath = "..\PhoneStore\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83F58515-1AC1-410A-B56F-12BA8ABEF297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F58515-1AC1-410A-B56F-12BA8ABEF297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {887AD884-A3E7-46B9-BA23-9BB2EA6E852F}
+	EndGlobalSection
+EndGlobal
