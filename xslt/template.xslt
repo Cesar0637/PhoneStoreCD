@@ -244,7 +244,7 @@
 										</div>
 										<div class="col-md-5">
 											<div class="image-holder">
-												<img src="assets/images/banner-image.png" alt="banner"/>
+												<img src="assets/images/galaxyWatch.jpg" alt="banner"/>
 											</div>
 										</div>
 									</div>
@@ -355,7 +355,7 @@
 									<div class="swiper-slide">
 										<div class="product-card position-relative">
 											<div class="image-holder">
-												<img src="assets/images/product-item1.jpg" alt="product-item" class="img-fluid"/>
+												<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
 											</div>
 											<div class="cart-concern position-absolute">
 												<div class="cart-button d-flex">
@@ -368,9 +368,13 @@
 											</div>
 											<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
 												<h3 class="card-title text-uppercase">
-													<a href="#">Iphone 10</a>
+													<a href="#">
+														<xsl:value-of select="@Nombre"/>
+													</a>
 												</h3>
-												<span class="item-price text-primary">$980</span>
+												<span class="item-price text-primary">
+													<xsl:value-of select="Precio"/>
+												</span>
 											</div>
 										</div>
 									</div>
@@ -381,6 +385,150 @@
 					</div>
 					<div class="swiper-pagination position-absolute text-center"></div>
 				</section>
+
+				<section id="mobile-products2" class="product-store position-relative padding-large no-padding-top">
+					<div class="container">
+						<div class="row">
+							<div class="display-header d-flex justify-content-between pb-3">
+								<h2 class="display-7 text-dark text-uppercase">Celulares Usados</h2>
+								<div class="btn-right">
+									<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
+								</div>
+							</div>
+							<div class="swiper product-swiper">
+								<div class="swiper-wrapper">
+									<xsl:for-each select="Productos/Categoria[@Nombre = 'Teléfonos']/Producto[@Usado = 'Sí']">
+									<div class="swiper-slide">
+											<div class="product-card position-relative">
+												<div class="image-holder">
+													<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
+												</div>
+												<div class="cart-concern position-absolute">
+													<div class="cart-button d-flex">
+														<a href="#" class="btn btn-medium btn-black">
+															Add to Cart<svg class="cart-outline">
+																<use href="#cart-outline"></use>
+															</svg>
+														</a>
+													</div>
+												</div>
+												<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+													<h3 class="card-title text-uppercase">
+														<a href="#">
+															<xsl:value-of select="@Nombre"/>
+														</a>
+													</h3>
+													<span class="item-price text-primary">
+														<xsl:value-of select="Precio"/>
+													</span>
+												</div>
+											</div>
+										</div>
+									</xsl:for-each>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination position-absolute text-center"></div>
+				</section>
+
+				<section id="smart-watches" class="product-store padding-large position-relative">
+					<div class="container">
+						<div class="row">
+							<div class="display-header d-flex justify-content-between pb-3">
+								<h2 class="display-7 text-dark text-uppercase">Relojes Usados</h2>
+								<div class="btn-right">
+									<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
+								</div>
+							</div>
+							<div class="swiper product-swiper">
+								<div class="swiper-wrapper">
+									<xsl:for-each select="Productos/Categoria[@Nombre = 'Relojes']/Producto[@Usado = 'Sí']">
+										<div class="swiper-slide">
+											<div class="product-card position-relative">
+												<div class="image-holder">
+													<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
+												</div>
+												<div class="cart-concern position-absolute">
+													<div class="cart-button d-flex">
+														<a href="#" class="btn btn-medium btn-black">
+															Add to Cart<svg class="cart-outline">
+																<use href="#cart-outline"></use>
+															</svg>
+														</a>
+													</div>
+												</div>
+												<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+													<h3 class="card-title text-uppercase">
+														<a href="#">
+															<xsl:value-of select="@Nombre"/>
+														</a>
+													</h3>
+													<span class="item-price text-primary">
+														<xsl:value-of select="Precio"/>
+													</span>
+												</div>
+											</div>
+										</div>
+									</xsl:for-each>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination position-absolute text-center"></div>
+				</section>
+
+				<section id="smart-watches2" class="product-store padding-large position-relative">
+
+					<div class="container">
+						<div class="row">
+							<div class="display-header d-flex justify-content-between pb-3">
+								<h2 class="display-7 text-dark text-uppercase">Relojes Nuevos</h2>
+								<div class="btn-right">
+									<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
+								</div>
+							</div>
+							<div class="swiper product-swiper">
+								<div class="swiper-wrapper">
+									<xsl:for-each select="Productos/Categoria[@Nombre = 'Relojes']/Producto[not(@Usado)]">
+										<div class="swiper-slide">
+											<div class="product-card position-relative">
+												<div class="image-holder">
+													<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
+												</div>
+												<div class="cart-concern position-absolute">
+													<div class="cart-button d-flex">
+														<a href="#" class="btn btn-medium btn-black">
+															Add to Cart<svg class="cart-outline">
+																<use href="#cart-outline"></use>
+															</svg>
+														</a>
+													</div>
+												</div>
+												<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+													<h3 class="card-title text-uppercase">
+														<a href="#">
+															<xsl:value-of select="@Nombre"/>
+														</a>
+													</h3>
+													<span class="item-price text-primary">
+														<xsl:value-of select="Precio"/>
+													</span>
+												</div>
+											</div>
+										</div>
+									</xsl:for-each>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination position-absolute text-center"></div>
+				</section>
+
+
+				
+				
+				
 				<script src="assets/js/jquery-1.11.0.min.js"></script>
 				<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 				<script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
@@ -390,5 +538,8 @@
 
 			</body>
 		</html>
+	</xsl:template>
+	<xsl:template name ="Home">
+		
 	</xsl:template>
 </xsl:stylesheet>

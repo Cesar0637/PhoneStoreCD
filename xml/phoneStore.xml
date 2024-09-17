@@ -13,12 +13,12 @@
 			<Producto Nombre="Samsung Galaxy S24 Ultra" ID="1">
 				<Descripcion><![CDATA[Gold 512GB 12gb Ram 200MPX pantalla 2k 120hz antirreflejante]]></Descripcion>
 				<Precio>$1,300</Precio>
-				<Imagen>assets/img/S24.png</Imagen>
+				<Imagen>assets/images/S24.png</Imagen>
 			</Producto>
-			<Producto Nombre="Samsung Galaxy S23 (Usado)" ID="2" Usado="Sí">
+			<Producto Nombre="Samsung Galaxy S22 (Usado)" ID="2" Usado="Sí">
 				<Descripcion><![CDATA[Samsung Galaxy S23 con pantalla AMOLED de 6.5 pulgadas y 256GB de almacenamiento. Producto usado en excelentes condiciones.]]></Descripcion>
 				<Precio>$750</Precio>
-				<Imagen>assets/img/galaxys23.jpg</Imagen>
+				<Imagen>assets/images/galaxys22.jpg</Imagen>
 				<Condicion>Excelente</Condicion>
 				<Garantia>3 meses</Garantia>
 				<AccesoriosIncluidos>Cargador, audífonos</AccesoriosIncluidos>
@@ -27,12 +27,12 @@
 			<Producto Nombre="iPhone 14 Pro" ID="3">
 				<Descripcion><![CDATA[Apple iPhone 14 Pro con 128GB de almacenamiento y cámara de 48MP.]]></Descripcion>
 				<Precio>$1,200</Precio>
-				<Imagen>assets/img/iphone14pro.jpg</Imagen>
+				<Imagen>assets/images/iphone14pro.jpg</Imagen>
 			</Producto>
 			<Producto Nombre="Samsung Galaxy S23 (Usado)" ID="4" Usado="Sí">
 				<Descripcion><![CDATA[Samsung Galaxy S23 con pantalla AMOLED de 6.5 pulgadas y 256GB de almacenamiento. Producto usado en excelentes condiciones.]]></Descripcion>
 				<Precio>$750</Precio>
-				<Imagen>assets/img/galaxys23.jpg</Imagen>
+				<Imagen>assets/images/s23.jpg</Imagen>
 				<Condicion>Excelente</Condicion>
 				<Garantia>3 meses</Garantia>
 				<AccesoriosIncluidos>Cargador, audífonos</AccesoriosIncluidos>
@@ -41,12 +41,12 @@
 			<Producto Nombre="Google Pixel 7" ID="5">
 				<Descripcion><![CDATA[Google Pixel 7 con cámara de 50MP y software Android puro.]]></Descripcion>
 				<Precio>$800</Precio>
-				<Imagen>assets/img/pixel7.jpg</Imagen>
+				<Imagen>assets/images/pixel7.jpg</Imagen>
 			</Producto>
 			<Producto Nombre="iPhone 13 (Usado)" ID="6" Usado="Sí">
 				<Descripcion><![CDATA[Apple iPhone 13 con 128GB. Producto usado, funciona correctamente, con ligeras marcas de uso.]]></Descripcion>
 				<Precio>$650</Precio>
-				<Imagen>assets/img/iphone13.jpg</Imagen>
+				<Imagen>assets/images/iphone13.jpg</Imagen>
 				<Condicion>Buena</Condicion>
 				<Garantia>1 mes</Garantia>
 				<AccesoriosIncluidos>Cargador, funda de silicona</AccesoriosIncluidos>
@@ -58,17 +58,17 @@
 			<Producto Nombre="Apple Watch Series 9" ID="1">
 				<Descripcion><![CDATA[Reloj inteligente de Apple con pantalla siempre activa y sensor de oxígeno en sangre.]]></Descripcion>
 				<Precio>$400</Precio>
-				<Imagen>assets/img/applewatch9.jpg</Imagen>
+				<Imagen>assets/images/aw9.jpeg</Imagen>
 			</Producto>
-			<Producto Nombre="Apple Watch Series 9" ID="1">
+			<Producto Nombre="Haylou" ID="1">
 				<Descripcion><![CDATA[Reloj inteligente de Apple con pantalla siempre activa y sensor de oxígeno en sangre.]]></Descripcion>
 				<Precio>$400</Precio>
-				<Imagen>assets/img/applewatch9.jpg</Imagen>
+				<Imagen>assets/images/haylou.jpg</Imagen>
 			</Producto>
 			<Producto Nombre="Samsung Galaxy Watch 5 (Usado)" ID="2" Usado="Sí">
 				<Descripcion><![CDATA[Reloj inteligente de Samsung con monitoreo de sueño y GPS incorporado. Producto usado, con ligeras marcas en la correa.]]></Descripcion>
 				<Precio>$250</Precio>
-				<Imagen>assets/img/galaxywatch5.jpg</Imagen>
+				<Imagen>assets/images/galaxywatch5.jpg</Imagen>
 				<Condicion>Buena</Condicion>
 				<Garantia>2 meses</Garantia>
 				<AccesoriosIncluidos>Cargador, correa de repuesto</AccesoriosIncluidos>
@@ -77,7 +77,7 @@
 			<Producto Nombre="Garmin Fenix 7" ID="3">
 				<Descripcion><![CDATA[Reloj deportivo premium con batería de larga duración y mapas topográficos.]]></Descripcion>
 				<Precio>$650</Precio>
-				<Imagen>assets/img/garminfenix7.jpg</Imagen>
+				<Imagen>assets/images/gf7.jpg</Imagen>
 			</Producto>
 		</Categoria>
 
@@ -85,7 +85,7 @@
 			<Producto Nombre="Pantalla para iPhone 13" ID="2">
 				<Descripcion><![CDATA[Pantalla de repuesto original para iPhone 13 de alta calidad.]]></Descripcion>
 				<Precio>$200</Precio>
-				<Imagen>assets/img/iphone13screen.jpg</Imagen>
+				<Imagen>assets/images/iphone13screen.jpg</Imagen>
 			</Producto>
 		</Categoria>
 
@@ -93,19 +93,19 @@
 			<Servicio Nombre="Reparación de Pantallas" ID="1">
 				<Descripcion><![CDATA[Cambio de pantallas para smartphones de todas las marcas.]]></Descripcion>
 				<Precio>$100</Precio>
-				<Imagen>assets/img/rep_pantallas.jpg</Imagen>
+				<Imagen>assets/images/rep_pantallas.jpg</Imagen>
 			</Servicio>
 
 			<Servicio Nombre="Reemplazo de Baterías" ID="2">
 				<Descripcion><![CDATA[Reemplazo de baterías para smartphones y relojes inteligentes.]]></Descripcion>
 				<Precio>$50</Precio>
-				<Imagen>assets/img/rep_baterias.jpg</Imagen>
+				<Imagen>assets/images/rep_baterias.jpg</Imagen>
 			</Servicio>
 
 			<Servicio Nombre="Reparación de Puerto de Carga (A Domicilio)" ID="3" A_Domicilio="Sí">
 				<Descripcion><![CDATA[Reparación del puerto de carga de teléfonos móviles. Servicio disponible a domicilio.]]></Descripcion>
 				<Precio>$80</Precio>
-				<Imagen>assets/img/rep_puerto_carga.jpg</Imagen>
+				<Imagen>assets/images/rep_puerto_carga.jpg</Imagen>
 				<CostosDeTransporte>$15</CostosDeTransporte>
 				<TiempoEstimadoDeLlegada>45 minutos</TiempoEstimadoDeLlegada>
 				<AreaDeCobertura>Hasta 15 km a la redonda</AreaDeCobertura>
@@ -114,7 +114,7 @@
 			<Servicio Nombre="Reparación de Pantallas (A Domicilio)" ID="4" A_Domicilio="Sí">
 				<Descripcion><![CDATA[Cambio de pantallas de smartphones con servicio a domicilio disponible.]]></Descripcion>
 				<Precio>$120</Precio>
-				<Imagen>assets/img/rep_pantallas_domicilio.jpg</Imagen>
+				<Imagen>assets/images/rep_pantallas_domicilio.jpg</Imagen>
 				<CostosDeTransporte>$20</CostosDeTransporte>
 				<TiempoEstimadoDeLlegada>1 hora</TiempoEstimadoDeLlegada>
 				<AreaDeCobertura>Hasta 20 km a la redonda</AreaDeCobertura>
@@ -123,19 +123,19 @@
 			<Servicio Nombre="Mantenimiento de Relojes" ID="5">
 				<Descripcion><![CDATA[Mantenimiento y ajuste de relojes inteligentes y tradicionales.]]></Descripcion>
 				<Precio>$75</Precio>
-				<Imagen>assets/img/rep_relojes.jpg</Imagen>
+				<Imagen>assets/images/rep_relojes.jpg</Imagen>
 			</Servicio>
 
 			<Servicio Nombre="Desbloqueo de Teléfonos" ID="6">
 				<Descripcion><![CDATA[Desbloqueo de teléfonos móviles de todas las marcas.]]></Descripcion>
 				<Precio>$60</Precio>
-				<Imagen>assets/img/desbloqueo_telefonos.jpg</Imagen>
+				<Imagen>assets/images/desbloqueo_telefonos.jpg</Imagen>
 			</Servicio>
 
 			<Servicio Nombre="Actualización de Software" ID="7" A_Domicilio="Sí">
 				<Descripcion><![CDATA[Actualización del sistema operativo y software de smartphones, tablets y relojes inteligentes. Disponible a domicilio.]]></Descripcion>
 				<Precio>$70</Precio>
-				<Imagen>assets/img/actualizacion_software.jpg</Imagen>
+				<Imagen>assets/images/actualizacion_software.jpg</Imagen>
 				<CostosDeTransporte>$10</CostosDeTransporte>
 				<TiempoEstimadoDeLlegada>30 minutos</TiempoEstimadoDeLlegada>
 				<AreaDeCobertura>Hasta 10 km a la redonda</AreaDeCobertura>
@@ -144,7 +144,7 @@
 			<Servicio Nombre="Rescate de Datos (A Domicilio)" ID="8" A_Domicilio="Sí">
 				<Descripcion><![CDATA[Recuperación de datos perdidos en smartphones, tablets y computadoras. Servicio disponible a domicilio.]]></Descripcion>
 				<Precio>$150</Precio>
-				<Imagen>assets/img/rescate_datos.jpg</Imagen>
+				<Imagen>assets/images/rescate_datos.jpg</Imagen>
 				<CostosDeTransporte>$25</CostosDeTransporte>
 				<TiempoEstimadoDeLlegada>1 hora y 30 minutos</TiempoEstimadoDeLlegada>
 				<AreaDeCobertura>Hasta 30 km a la redonda</AreaDeCobertura>
@@ -160,7 +160,7 @@
 		<Direccion>Avenida Central #123, Col. Centro, Ciudad Tech, CP 12345</Direccion>
 		<Telefono>123-456-7890</Telefono>
 		<Correo>contacto@techzone.com</Correo>
-		<Imagen>assets/img/tienda.jpg</Imagen>
+		<Imagen>assets/images/tienda.jpg</Imagen>
 		<Horarios>
 			<Horario>Lunes a Viernes: 09:00 a 19:00</Horario>
 			<Horario>Sábados: 10:00 a 18:00</Horario>
