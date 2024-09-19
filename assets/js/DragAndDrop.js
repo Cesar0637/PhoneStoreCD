@@ -1,5 +1,5 @@
 ﻿var carrito = [];
-let total=0;
+let total = 0;
 function start(e) {
     e.dataTransfer.setData("text/plain", e.target.id);
 }
@@ -13,25 +13,33 @@ function drop(e) {
     var productoId = e.dataTransfer.getData("text/plain");
     var productoElement = document.getElementById(productoId);
 
-    
+
     var precio = parseInt(productoElement.getAttribute("data-precio"));
     console.log(precio)
 
-    
+
     if (!carrito.includes(productoId)) {
         carrito.push(productoId);
         var clonedProduct = productoElement.cloneNode(true);
         clonedProduct.textContent += " (en carrito)";
         e.target.appendChild(clonedProduct);
 
-        
+
 
         total += precio;
         console.log("Total en carrito: " + total); // Mostrar total en la consola
-        productoC= document.getElementById('carrito-Total')
-        productoC.textContent = `Total: ${total}`;  
+        productoC = document.getElementById('carrito-Total')
+        productoC.textContent = `Total: ${total}`;
     }
 
+}
+
+function remove(e) {
+    console.log("delete")
+    var elementoArrastrado = document.getElementById(e.dataTransfer.getData("Data"))
+    elementoArrastrado.parentNode.removeChild(elementoArrastrado)
+    e.target.style.border = ""
+    contadorA--
 }
 //.carrito - total {
 //    font - family: 'Arial', sans - serif;

@@ -811,10 +811,17 @@
 						<p>Arrastra los productos aquí</p>
 					</div>
 				<div id="carrito-Total"></div>
+				
+					<h2>Eliminar</h2>
+					<div id="carritoE" ondragenter="enter(event)" ondragover="return false" ondrop="drop(event)" class="carrito-eliminar">
+						<p>Arrastra los productos aquí para eliminar </p>
+					</div>
+					<div id="carrito-Total"></div>
+
 				</div>
 			</div>
-			
 		</div>
+			
 
 	</xsl:template>
 </xsl:stylesheet>
