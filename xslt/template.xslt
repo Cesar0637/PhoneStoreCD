@@ -28,7 +28,10 @@
 
 				<!-- script
     ================================================== -->
-				<script src="assets/assets/js/modernizr.js"></script>
+				<script src="assets/js/modernizr.js"></script>
+				<script src="assets/js/carritoCompras.js"></script>
+				
+				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 			</head>
 
 			<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
@@ -132,7 +135,7 @@
 				<header id="header" class="site-header header-scrolled position-fixed text-black bg-light">
 					<nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
 						<div class="container-fluid">
-							<a class="navbar-brand" href="index.html">
+							<a class="navbar-brand" href="Default.aspx?Id=0">
 								<img src="assets/images/main-logo.png" class="logo"/>
 							</a>
 							<button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,7 +145,7 @@
 							</button>
 							<div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
 								<div class="offcanvas-header px-4 pb-0">
-									<a class="navbar-brand" href="index.html">
+									<a class="navbar-brand" href="Default.aspx?Id=0">
 										<img src="assets/images/main-logo.png" class="logo"/>
 									</a>
 									<button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
@@ -150,10 +153,10 @@
 								<div class="offcanvas-body">
 									<ul id="navbar" class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3">
 										<li class="nav-item">
-											<a class="nav-link me-4 active" href="#billboard">Home</a>
+											<a class="nav-link me-4 active" href="Default.aspx?Id=0">Home</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link me-4" href="#company-services">Services</a>
+											<a class="nav-link me-4" href="Default.aspx?Id=3">Services</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link me-4" href="#mobile-products">Products</a>
@@ -162,38 +165,23 @@
 											<a class="nav-link me-4" href="#smart-watches">Watches</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link me-4" href="#yearly-sale">Sale</a>
+											<a class="nav-link me-4" href="Default.aspx?Id=2">Multimedia</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link me-4" href="#latest-blog">Blog</a>
+											<a class="nav-link me-4" href="Default.aspx?Id=4">Maps</a>
 										</li>
 										<li class="nav-item dropdown">
 											<a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pages</a>
 											<ul class="dropdown-menu">
-												<li>
-													<a href="about.html" class="dropdown-item">About</a>
-												</li>
-												<li>
-													<a href="blog.html" class="dropdown-item">Blog</a>
-												</li>
-												<li>
-													<a href="shop.html" class="dropdown-item">Shop</a>
-												</li>
-												<li>
-													<a href="cart.html" class="dropdown-item">Cart</a>
-												</li>
-												<li>
-													<a href="checkout.html" class="dropdown-item">Checkout</a>
-												</li>
-												<li>
-													<a href="single-post.html" class="dropdown-item">Single Post</a>
-												</li>
-												<li>
-													<a href="single-product.html" class="dropdown-item">Single Product</a>
-												</li>
-												<li>
-													<a href="contact.html" class="dropdown-item">Contact</a>
-												</li>
+
+												<xsl:for-each select="Opciones/Opcion">
+													<li>
+														<a href="{@Url}" class="dropdown-item">
+															<xsl:value-of select="@Texto"/>
+														</a>
+													</li>
+												</xsl:for-each>
+
 											</ul>
 										</li>
 										<li class="nav-item">
@@ -214,10 +202,11 @@
 														</a>
 													</li>
 													<li>
-														<a href="cart.html">
+														<a href="Default.aspx?Id=5">
 															<svg class="cart">
 																<use href="#cart"></use>
 															</svg>
+															<span id="cart-count">0</span>
 														</a>
 													</li>
 												</ul>
@@ -230,316 +219,602 @@
 					</nav>
 				</header>
 
-				<section id="billboard" class="position-relative overflow-hidden bg-light-blue">
-					<div class="swiper main-swiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="container">
-									<div class="row d-flex align-items-center">
-										<div class="col-md-6">
-											<div class="banner-content">
-												<h1 class="display-2 text-uppercase text-dark pb-5">Bienvenido A PhoneStore	</h1>
-												<a href="shop.html" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">Shop Product</a>
-											</div>
-										</div>
-										<div class="col-md-5">
-											<div class="image-holder">
-												<img src="assets/images/galaxyWatch.jpg" alt="banner"/>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="container">
-									<div class="row d-flex flex-wrap align-items-center">
-										<div class="col-md-6">
-											<div class="banner-content">
-												<h1 class="display-2 text-uppercase text-dark pb-5">Ven Y conoce lo mas top en tecnolgia </h1>
-												<a href="shop.html" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">Shop Product</a>
-											</div>
-										</div>
-										<div class="col-md-5">
-											<div class="image-holder" >
-												<img src="assets/images/S24.png" alt="s24" id="S24"/>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-icon swiper-arrow swiper-arrow-prev">
-						<svg class="chevron-left">
-							<use href="#chevron-left" />
-						</svg>
-					</div>
-					<div class="swiper-icon swiper-arrow swiper-arrow-next">
-						<svg class="chevron-right">
-							<use href="#chevron-right" />
-						</svg>
-					</div>
-				</section>
+				<xsl:choose>
+					<xsl:when test ="$TipoMenu = 0">
+						<!--xsl:call-template	me ayuda a invoacar un template que contiene informacion o 
+						escructurar dentro sel mismo y asi inferirlo dentro del template principal-->
+						<xsl:call-template name="Home">	</xsl:call-template>
+					</xsl:when>
+					<xsl:when test ="$TipoMenu = 3">
+						<xsl:call-template name="Servicio"></xsl:call-template>
+					</xsl:when>
+					<xsl:when test ="$TipoMenu = 4">
+						<xsl:call-template name="maps"></xsl:call-template>
 
-				<section id="company-services" class="padding-large">
+					</xsl:when>
+					<xsl:when test ="$TipoMenu = 2">
+						<xsl:call-template name="multimedia"></xsl:call-template>
+
+					</xsl:when>
+					<xsl:when test ="$TipoMenu = 5">
+						<xsl:call-template name="carrito"></xsl:call-template>
+
+					</xsl:when>
+					
+					<xsl:otherwise>
+						<xsl:call-template name="Home">	</xsl:call-template>
+					</xsl:otherwise>
+				</xsl:choose>
+
+
+
+				<footer id="footer" class="overflow-hidden">
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-3 col-md-6 pb-3">
-								<div class="icon-box d-flex">
-									<div class="icon-box-icon pe-3 pb-3">
-										<svg class="cart-outline">
-											<use href="#cart-outline" />
-										</svg>
-									</div>
-									<div class="icon-box-content">
-										<h3 class="card-title text-uppercase text-dark">Envios Completamente Gratis</h3>
-										<p>En casi practicamente todos nuestros productos</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-6 pb-3">
-								<div class="icon-box d-flex">
-									<div class="icon-box-icon pe-3 pb-3">
-										<svg class="quality">
-											<use href="#quality" />
-										</svg>
-									</div>
-									<div class="icon-box-content">
-										<h3 class="card-title text-uppercase text-dark">Calidad Garantizada</h3>
-										<p>Hasta un 12 meses en articulos nuevos</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-6 pb-3">
-								<div class="icon-box d-flex">
-									<div class="icon-box-icon pe-3 pb-3">
-										<svg class="price-tag">
-											<use href="#price-tag" />
-										</svg>
-									</div>
-									<div class="icon-box-content">
-										<h3 class="card-title text-uppercase text-dark">Ofertas Increibles</h3>
-										<p>en practicamente todos nuestros productos</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-6 pb-3">
-								<div class="icon-box d-flex">
-									<div class="icon-box-icon pe-3 pb-3">
-										<svg class="shield-plus">
-											<use href="#shield-plus" />
-										</svg>
-									</div>
-									<div class="icon-box-content">
-										<h3 class="card-title text-uppercase text-dark">Pagos Seguros</h3>
-										<p>Aceptamos varios metodos de pago 100% seguros</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section id="mobile-products" class="product-store position-relative padding-large no-padding-top">
-					<div class="container">
-						<div class="row">
-							<div class="display-header d-flex justify-content-between pb-3">
-								<h2 class="display-7 text-dark text-uppercase">Celulares Nuevos</h2>
-								<div class="btn-right">
-									<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
-								</div>
-							</div>
-							<div class="swiper product-swiper">
-								<div class="swiper-wrapper">
-									<xsl:for-each select="Productos/Categoria[@Nombre = 'Teléfonos']/Producto[not(@Usado)]">
-									<div class="swiper-slide">
-										<div class="product-card position-relative">
-											<div class="image-holder">
-												<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
-											</div>
-											<div class="cart-concern position-absolute">
-												<div class="cart-button d-flex">
-													<a href="#" class="btn btn-medium btn-black">
-														Add to Cart<svg class="cart-outline">
-															<use href="#cart-outline"></use>
-														</svg>
-													</a>
-												</div>
-											</div>
-											<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-												<h3 class="card-title text-uppercase">
-													<a href="#">
-														<xsl:value-of select="@Nombre"/>
-													</a>
-												</h3>
-												<span class="item-price text-primary">
-													<xsl:value-of select="Precio"/>
-												</span>
-											</div>
-										</div>
-									</div>
-									</xsl:for-each>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-pagination position-absolute text-center"></div>
-				</section>
-
-				<section id="mobile-products2" class="product-store position-relative padding-large no-padding-top">
-					<div class="container">
-						<div class="row">
-							<div class="display-header d-flex justify-content-between pb-3">
-								<h2 class="display-7 text-dark text-uppercase">Celulares Usados</h2>
-								<div class="btn-right">
-									<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
-								</div>
-							</div>
-							<div class="swiper product-swiper">
-								<div class="swiper-wrapper">
-									<xsl:for-each select="Productos/Categoria[@Nombre = 'Teléfonos']/Producto[@Usado = 'Sí']">
-									<div class="swiper-slide">
-											<div class="product-card position-relative">
-												<div class="image-holder">
-													<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
-												</div>
-												<div class="cart-concern position-absolute">
-													<div class="cart-button d-flex">
-														<a href="#" class="btn btn-medium btn-black">
-															Add to Cart<svg class="cart-outline">
-																<use href="#cart-outline"></use>
+							<div class="footer-top-area">
+								<div class="row d-flex flex-wrap justify-content-between">
+									<div class="col-lg-3 col-sm-6 pb-3">
+										<div class="footer-menu">
+											<img src="assets/images/main-logo.png" alt="logo"/>
+											<p>Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. Gravida massa volutpat aenean odio erat nullam fringilla.</p>
+											<div class="social-links">
+												<ul class="d-flex list-unstyled">
+													<li>
+														<a href="#">
+															<svg class="facebook">
+																<use href="#facebook" />
 															</svg>
 														</a>
-													</div>
-												</div>
-												<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-													<h3 class="card-title text-uppercase">
+													</li>
+													<li>
 														<a href="#">
-															<xsl:value-of select="@Nombre"/>
-														</a>
-													</h3>
-													<span class="item-price text-primary">
-														<xsl:value-of select="Precio"/>
-													</span>
-												</div>
-											</div>
-										</div>
-									</xsl:for-each>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-pagination position-absolute text-center"></div>
-				</section>
-
-				<section id="smart-watches" class="product-store padding-large position-relative">
-					<div class="container">
-						<div class="row">
-							<div class="display-header d-flex justify-content-between pb-3">
-								<h2 class="display-7 text-dark text-uppercase">Relojes Usados</h2>
-								<div class="btn-right">
-									<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
-								</div>
-							</div>
-							<div class="swiper product-swiper">
-								<div class="swiper-wrapper">
-									<xsl:for-each select="Productos/Categoria[@Nombre = 'Relojes']/Producto[@Usado = 'Sí']">
-										<div class="swiper-slide">
-											<div class="product-card position-relative">
-												<div class="image-holder">
-													<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
-												</div>
-												<div class="cart-concern position-absolute">
-													<div class="cart-button d-flex">
-														<a href="#" class="btn btn-medium btn-black">
-															Add to Cart<svg class="cart-outline">
-																<use href="#cart-outline"></use>
+															<svg class="instagram">
+																<use href="#instagram" />
 															</svg>
 														</a>
-													</div>
-												</div>
-												<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-													<h3 class="card-title text-uppercase">
+													</li>
+													<li>
 														<a href="#">
-															<xsl:value-of select="@Nombre"/>
-														</a>
-													</h3>
-													<span class="item-price text-primary">
-														<xsl:value-of select="Precio"/>
-													</span>
-												</div>
-											</div>
-										</div>
-									</xsl:for-each>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-pagination position-absolute text-center"></div>
-				</section>
-
-				<section id="smart-watches2" class="product-store padding-large position-relative">
-
-					<div class="container">
-						<div class="row">
-							<div class="display-header d-flex justify-content-between pb-3">
-								<h2 class="display-7 text-dark text-uppercase">Relojes Nuevos</h2>
-								<div class="btn-right">
-									<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
-								</div>
-							</div>
-							<div class="swiper product-swiper">
-								<div class="swiper-wrapper">
-									<xsl:for-each select="Productos/Categoria[@Nombre = 'Relojes']/Producto[not(@Usado)]">
-										<div class="swiper-slide">
-											<div class="product-card position-relative">
-												<div class="image-holder">
-													<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
-												</div>
-												<div class="cart-concern position-absolute">
-													<div class="cart-button d-flex">
-														<a href="#" class="btn btn-medium btn-black">
-															Add to Cart<svg class="cart-outline">
-																<use href="#cart-outline"></use>
+															<svg class="twitter">
+																<use href="#twitter" />
 															</svg>
 														</a>
-													</div>
-												</div>
-												<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-													<h3 class="card-title text-uppercase">
+													</li>
+													<li>
 														<a href="#">
-															<xsl:value-of select="@Nombre"/>
+															<svg class="linkedin">
+																<use href="#linkedin" />
+															</svg>
 														</a>
-													</h3>
-													<span class="item-price text-primary">
-														<xsl:value-of select="Precio"/>
-													</span>
-												</div>
+													</li>
+													<li>
+														<a href="#">
+															<svg class="youtube">
+																<use href="#youtube" />
+															</svg>
+														</a>
+													</li>
+												</ul>
 											</div>
 										</div>
-									</xsl:for-each>
+									</div>
+									<div class="col-lg-2 col-sm-6 pb-3">
+										<div class="footer-menu text-uppercase">
+											<h5 class="widget-title pb-2">Quick Links</h5>
+											<ul class="menu-list list-unstyled text-uppercase">
+												<li class="menu-item pb-2">
+													<a href="#">Home</a>
+												</li>
+												<li class="menu-item pb-2">
+													<a href="#">About</a>
+												</li>
+												<li class="menu-item pb-2">
+													<a href="#">Shop</a>
+												</li>
+												<li class="menu-item pb-2">
+													<a href="#">Blogs</a>
+												</li>
+												<li class="menu-item pb-2">
+													<a href="#">Contact</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-3 col-sm-6 pb-3">
+										<div class="footer-menu text-uppercase">
+											<h5 class="widget-title pb-2">Help <![CDATA[$]]> Info Help</h5>
+											<ul class="menu-list list-unstyled">
+												<li class="menu-item pb-2">
+													<a href="#">Track Your Order</a>
+												</li>
+												<li class="menu-item pb-2">
+													<a href="#">Returns Policies</a>
+												</li>
+												<li class="menu-item pb-2">
+													<a href="#">Shipping + Delivery</a>
+												</li>
+												<li class="menu-item pb-2">
+													<a href="#">Contact Us</a>
+												</li>
+												<li class="menu-item pb-2">
+													<a href="#">Faqs</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-3 col-sm-6 pb-3">
+										<div class="footer-menu contact-item">
+											<h5 class="widget-title text-uppercase pb-2">Contact Us</h5>
+											<p>
+												Do you have any queries or suggestions? <a href="mailto:">yourinfo@gmail.com</a>
+											</p>
+											<p>
+												If you need support? Just give us a call. <a href="">+55 111 222 333 44</a>
+											</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="swiper-pagination position-absolute text-center"></div>
-				</section>
+					<hr/>
+				</footer>
 
 
-				
-				
-				
+
 				<script src="assets/js/jquery-1.11.0.min.js"></script>
 				<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 				<script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
 				<script type="text/javascript" src="assets/js/plugins.js"></script>
 				<script type="text/javascript" src="assets/js/script.js"></script>
+				<script type="text/javascript" src="assets/js/carritoCompras.js"></script>
+				
 
 
 			</body>
 		</html>
 	</xsl:template>
 	<xsl:template name ="Home">
-		
+		<section id="billboard" class="position-relative overflow-hidden bg-light-blue pt-5">
+			<div class="swiper main-swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="container">
+							<div class="row d-flex align-items-center">
+								<div class="col-md-6">
+									<div class="banner-content">
+										<h1 class="display-2 text-uppercase text-dark p-5">Bienvenido A PhoneStore	</h1>
+										<a href="shop.html" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">Shop Product</a>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="image-holder">
+										<!--<img src="assets/images/galaxyWatch.jpg" alt="banner"/>-->
+										<img src="assets/images/S24.png" alt="s24" id="S24"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="container">
+							<div class="row d-flex flex-wrap align-items-center">
+								<div class="col-md-6">
+									<div class="banner-content">
+										<h1 class="display-2 text-uppercase text-dark pb-5">Ven Y conoce lo mas top en tecnolgia </h1>
+										<a href="shop.html" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">Shop Product</a>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="image-holder" >
+										<img src="assets/images/S24.png" alt="s24" id="S24"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-icon swiper-arrow swiper-arrow-prev">
+				<svg class="chevron-left">
+					<use href="#chevron-left" />
+				</svg>
+			</div>
+			<div class="swiper-icon swiper-arrow swiper-arrow-next">
+				<svg class="chevron-right">
+					<use href="#chevron-right" />
+				</svg>
+			</div>
+		</section>
+
+		<section id="company-services" class="padding-large">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 pb-3">
+						<div class="icon-box d-flex">
+							<div class="icon-box-icon pe-3 pb-3">
+								<svg class="cart-outline">
+									<use href="#cart-outline" />
+								</svg>
+							</div>
+							<div class="icon-box-content">
+								<h3 class="card-title text-uppercase text-dark">Envios Completamente Gratis</h3>
+								<p>En casi practicamente todos nuestros productos</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 pb-3">
+						<div class="icon-box d-flex">
+							<div class="icon-box-icon pe-3 pb-3">
+								<svg class="quality">
+									<use href="#quality" />
+								</svg>
+							</div>
+							<div class="icon-box-content">
+								<h3 class="card-title text-uppercase text-dark">Calidad Garantizada</h3>
+								<p>Hasta un 12 meses en articulos nuevos</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 pb-3">
+						<div class="icon-box d-flex">
+							<div class="icon-box-icon pe-3 pb-3">
+								<svg class="price-tag">
+									<use href="#price-tag" />
+								</svg>
+							</div>
+							<div class="icon-box-content">
+								<h3 class="card-title text-uppercase text-dark">Ofertas Increibles</h3>
+								<p>en practicamente todos nuestros productos</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 pb-3">
+						<div class="icon-box d-flex">
+							<div class="icon-box-icon pe-3 pb-3">
+								<svg class="shield-plus">
+									<use href="#shield-plus" />
+								</svg>
+							</div>
+							<div class="icon-box-content">
+								<h3 class="card-title text-uppercase text-dark">Pagos Seguros</h3>
+								<p>Aceptamos varios metodos de pago 100% seguros</p>
+								<div id="cart-items"></div>
+								<div id="cart-total"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="mobile-products" class="product-store position-relative padding-large no-padding-top">
+			<div class="container">
+				<div class="row">
+					<div class="display-header d-flex justify-content-between pb-3">
+						<h2 class="display-7 text-dark text-uppercase">Celulares Nuevos</h2>
+						<div class="btn-right">
+							<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
+						</div>
+					</div>
+					<div class="swiper product-swiper">
+						<div class="swiper-wrapper">
+							<xsl:for-each select="Productos/Categoria[@Nombre = 'Teléfonos']/Producto[not(@Usado)]">
+								<div class="swiper-slide">
+									<div class="product-card position-relative">
+										<div class="image-holder">
+											<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
+										</div>
+										<div class="cart-concern position-absolute">
+											<div class="cart-button d-flex">
+												<a href="#" class="btn btn-medium btn-black" onclick="addToCart('{@ID}', '{@Nombre}', '{Precio}')">
+													Add to Cart<svg class="cart-outline">
+														<use href="#cart-outline"></use>
+													</svg>
+												</a>
+											</div>
+										</div>
+										<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+											<h3 class="card-title text-uppercase">
+												<a href="#">
+													<xsl:value-of select="@Nombre"/>
+												</a>
+											</h3>
+											<span class="item-price text-primary">
+												<xsl:value-of select="Precio"/>
+											</span>
+										</div>
+									</div>
+								</div>
+							</xsl:for-each>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination position-absolute text-center"></div>
+		</section>
+
+		<section id="mobile-products2" class="product-store position-relative padding-large no-padding-top">
+			<div class="container">
+				<div class="row">
+					<div class="display-header d-flex justify-content-between pb-3">
+						<h2 class="display-7 text-dark text-uppercase">Celulares Usados</h2>
+						<div class="btn-right">
+							<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
+						</div>
+					</div>
+					<div class="swiper product-swiper">
+						<div class="swiper-wrapper">
+							<xsl:for-each select="Productos/Categoria[@Nombre = 'Teléfonos']/Producto[@Usado = 'Sí']">
+								<div class="swiper-slide">
+									<div class="product-card position-relative">
+										<div class="image-holder">
+											<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
+										</div>
+										<div class="cart-concern position-absolute">
+											<div class="cart-button d-flex">
+												<a href="#" class="btn btn-medium btn-black" onclick="addToCart('{@ID}', '{@Nombre}', '{Precio}')">
+													Add to Cart"<svg class="cart-outline">
+														<use href="#cart-outline"></use>
+													</svg>
+												</a>
+											</div>
+										</div>
+										<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+											<h3 class="card-title text-uppercase">
+												<a href="#">
+													<xsl:value-of select="@Nombre"/>
+												</a>
+											</h3>
+											<span class="item-price text-primary">
+												<xsl:value-of select="Precio"/>
+											</span>
+										</div>
+									</div>
+								</div>
+							</xsl:for-each>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="swiper-pagination position-absolute text-center"></div>
+		</section>
+
+		<section id="smart-watches" class="product-store padding-large position-relative">
+			<div class="container">
+				<div class="row">
+					<div class="display-header d-flex justify-content-between pb-3">
+						<h2 class="display-7 text-dark text-uppercase">Relojes Usados</h2>
+						<div class="btn-right">
+							<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
+						</div>
+					</div>
+					<div class="swiper product-swiper">
+						<div class="swiper-wrapper">
+							<xsl:for-each select="Productos/Categoria[@Nombre = 'Relojes']/Producto[@Usado = 'Sí']">
+								<div class="swiper-slide">
+									<div class="product-card position-relative">
+										<div class="image-holder">
+											<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
+										</div>
+										<div class="cart-concern position-absolute">
+											<div class="cart-button d-flex">
+												<a href="#" class="btn btn-medium btn-black" onclick="addToCart('{@ID}', '{@Nombre}', '{Precio}')">
+													Add to Cart"<svg class="cart-outline">
+														<use href="#cart-outline"></use>
+													</svg>
+												</a>
+											</div>
+										</div>
+										<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+											<h3 class="card-title text-uppercase">
+												<a href="#">
+													<xsl:value-of select="@Nombre"/>
+												</a>
+											</h3>
+											<span class="item-price text-primary">
+												<xsl:value-of select="Precio"/>
+											</span>
+										</div>
+									</div>
+								</div>
+							</xsl:for-each>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination position-absolute text-center"></div>
+		</section>
+
+		<section id="smart-watches2" class="product-store padding-large position-relative">
+
+			<div class="container">
+				<div class="row">
+					<div class="display-header d-flex justify-content-between pb-3">
+						<h2 class="display-7 text-dark text-uppercase">Relojes Nuevos</h2>
+						<div class="btn-right">
+							<a href="shop.html" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
+						</div>
+					</div>
+					<div class="swiper product-swiper">
+						<div class="swiper-wrapper">
+							<xsl:for-each select="Productos/Categoria[@Nombre = 'Relojes']/Producto[not(@Usado)]">
+								<div class="swiper-slide">
+									<div class="product-card position-relative">
+										<div class="image-holder">
+											<img src="{Imagen}" alt="{Imagen}" class="img-fluid"/>
+										</div>
+										<div class="cart-concern position-absolute">
+											<div class="cart-button d-flex">
+												<a href="#" class="btn btn-medium btn-black" onclick="addToCart('{@ID}', '{@Nombre}', '{Precio}')">
+													Add to Cart"<svg class="cart-outline">
+														<use href="#cart-outline"></use>
+													</svg>
+												</a>
+											</div>
+										</div>
+										<div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+											<h3 class="card-title text-uppercase">
+												<a href="#">
+													<xsl:value-of select="@Nombre"/>
+												</a>
+											</h3>
+											<span class="item-price text-primary">
+												<xsl:value-of select="Precio"/>
+											</span>
+										</div>
+									</div>
+								</div>
+							</xsl:for-each>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination position-absolute text-center"></div>
+		</section>
+	</xsl:template>
+	<xsl:template name ="Servicio">
+	<section id="latest-blog" class="padding-large">
+		<div class="container">
+			<div class="row">
+				<div class="display-header d-flex justify-content-between pb-3">
+					<h2 class="display-7 text-dark text-uppercase">Latest Posts</h2>
+					<div class="btn-right">
+						<a href="blog.html" class="btn btn-medium btn-normal text-uppercase">Read Blog</a>
+					</div>
+				</div>
+				<div class="post-grid d-flex flex-wrap justify-content-between">
+					<xsl:for-each select="Productos/Categoria[@Nombre = 'Servicios Técnicos']/Servicio">
+
+						<div class="col-lg-4 col-sm-12">
+							<div class="card border-none me-3">
+								<div class="card-image">
+									<img src="{Imagen}" alt="{Imagen}" class="img-fluid2" id="service"/>
+								</div>
+							</div>
+							<div class="card-body text-uppercase">
+								<div class="card-meta text-muted">
+									<span class="meta-date">feb 22, 2023</span>
+									<span class="meta-category">- Gadgets</span>
+								</div>
+								<h3 class="card-title">
+									<a href="#">
+										<xsl:value-of select="@Nombre"></xsl:value-of>
+									</a>
+								</h3>
+							</div>
+						</div>
+
+					</xsl:for-each>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	</xsl:template>
+	<xsl:template name="maps">
+		<script>
+			<![CDATA[
+			(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+			key: "AIzaSyCWeeateTaYGqsHhNcmoDfT7Us-vLDZVPs",
+			// Add other bootstrap parameters as needed, using camel case.
+			// Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+			});]]>
+		</script>
+		<!--referencia JS-->
+		<script ></script>
+		<script src="assets/js/scriptMap.js"></script>
+
+		<section id="contact" class="contact">
+			<div class="container" data-aos="fade-up">
+
+				<div class="section-title">
+					<h2>Contact</h2>
+					<p>Queremos Contactarete</p>
+				</div>
+			</div>
+
+			<div data-aos="fade-up">
+				<!--<iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen=""></iframe>-->
+				<style>
+					#map{
+					border:0;
+					width: 100%;
+					height: 350px;
+					}
+				</style>
+				<div id="google-map">
+					<div id="map"></div>
+				</div>
+				<text id="direccion"></text>
+				<div class="col-lg-12 megin-bottom-30" id="street"></div>
+				<div id="cart-items"></div>
+				<div id="cart-total"></div>
+			</div>
+		</section>
+		</xsl:template>
+	<xsl:template name="multimedia">
+	<div class="container">
+		<!--Audio-->
+		<section class="tm-section-row p-5">
+			<br></br>
+			<br></br>
+			<h2>Audio</h2>
+			<div id="Audio" style="width:100%">
+				<audio controls="true" style="width:100%" autoplay="autoplay">
+					<source src="assets/media/droele.mp3"></source>
+				</audio>
+			</div>
+		</section>
+		<!--Video-->
+		<section class="tm-section-row p-5">
+
+			<h2>Video</h2>
+			<div id="Video" style="width:100%">
+				<video controls="true" width="100%" poster="assets/img/gallery/gallery-2.jpg">
+					<source src="assets/media/s24.mp4"></source>
+				</video>
+			</div>
+		</section>
+	</div>
+	</xsl:template>
+	<xsl:template name="carrito">
+		<link rel="stylesheet" type="text/css" href="assets/css/DragAndDrop.css"/>
+		<script src="assets/js/DragAndDrop.js"></script>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-md-8">
+					<h2>Productos</h2>
+					<div id="productos" class="product-container">
+						<xsl:for-each select="Productos/Categoria/Producto">
+							<div class="producto" id="producto{@ID}" data-precio ="{Precio}"  draggable="true" ondragstart="start(event)">
+								<img src="{Imagen}" alt="{Imagen}" class="product" />
+								<span class="product-name">
+									<xsl:value-of select="@Nombre"/>
+								</span>
+							</div>
+						</xsl:for-each>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<h2>Carrito</h2>
+					<div id="carrito" ondragenter="enter(event)" ondragover="return false" ondrop="drop(event)" class="carrito-container">
+						<p>Arrastra los productos aquí</p>
+					</div>
+				<div id="carrito-Total"></div>
+				</div>
+			</div>
+			
+		</div>
+
 	</xsl:template>
 </xsl:stylesheet>

@@ -1021,9 +1021,14 @@ figure.instagram-item img.insta-image {
 .post-navigation:focus svg {
     fill: var(--primary-color);
 }
+.img-fluid {
+    width: 15rem; /* Asegura que la imagen ocupe el 100% del ancho de su contenedor */
+    height: 20rem !important;/* Altura automática en dispositivos grandes */
+    object-fit: cover; /* Asegura que la imagen no se deforme y se ajuste bien */
+}
 .img-fluid2 {
-    width: 50px; /* Asegura que la imagen ocupe el 100% del ancho de su contenedor */
-    height: 100px; /* Altura automática en dispositivos grandes */
+    width: 20rem; /* Asegura que la imagen ocupe el 100% del ancho de su contenedor */
+    height: 10rem !important; /* Altura automática en dispositivos grandes */
     object-fit: cover; /* Asegura que la imagen no se deforme y se ajuste bien */
 }
 
