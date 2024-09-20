@@ -50,6 +50,7 @@ namespace PhoneStore
         //leemos el archivos XSLT y lo cargamos para su transformación
         XslCompiledTransform xslt = new XslCompiledTransform();
         xslt.Load(xsltPath, settings, resolver);
+        xslt.Load(xsltPath, settings, resolver);
 
         //Creamos un StringBuilder para almacenar el resultado de la transformación
         StringBuilder stringBuilder = new StringBuilder();
@@ -65,7 +66,7 @@ namespace PhoneStore
 
         //Obtenemos el resultado de la traensformación como una sola cadena
         string resultado = stringBuilder.ToString();
-
+            
         //Escribimos el resultado como una respuesta HTTP
         Response.Write(resultado);
     }

@@ -30,7 +30,7 @@
     ================================================== -->
 				<script src="assets/js/modernizr.js"></script>
 				<script src="assets/js/carritoCompras.js"></script>
-				
+
 				<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 			</head>
 
@@ -240,7 +240,7 @@
 						<xsl:call-template name="carrito"></xsl:call-template>
 
 					</xsl:when>
-					
+
 					<xsl:otherwise>
 						<xsl:call-template name="Home">	</xsl:call-template>
 					</xsl:otherwise>
@@ -368,7 +368,7 @@
 				<script type="text/javascript" src="assets/js/plugins.js"></script>
 				<script type="text/javascript" src="assets/js/script.js"></script>
 				<script type="text/javascript" src="assets/js/carritoCompras.js"></script>
-				
+
 
 
 			</body>
@@ -675,43 +675,43 @@
 		</section>
 	</xsl:template>
 	<xsl:template name ="Servicio">
-	<section id="latest-blog" class="padding-large">
-		<div class="container">
-			<div class="row">
-				<div class="display-header d-flex justify-content-between pb-3">
-					<h2 class="display-7 text-dark text-uppercase">Latest Posts</h2>
-					<div class="btn-right">
-						<a href="blog.html" class="btn btn-medium btn-normal text-uppercase">Read Blog</a>
+		<section id="latest-blog" class="padding-large">
+			<div class="container">
+				<div class="row">
+					<div class="display-header d-flex justify-content-between pb-3">
+						<h2 class="display-7 text-dark text-uppercase">Latest Posts</h2>
+						<div class="btn-right">
+							<a href="blog.html" class="btn btn-medium btn-normal text-uppercase">Read Blog</a>
+						</div>
+					</div>
+					<div class="post-grid d-flex flex-wrap justify-content-between">
+						<xsl:for-each select="Productos/Categoria[@Nombre = 'Servicios Técnicos']/Servicio">
+
+							<div class="col-lg-4 col-sm-12">
+								<div class="card border-none me-3">
+									<div class="card-image">
+										<img src="{Imagen}" alt="{Imagen}" class="img-fluid2" id="service"/>
+									</div>
+								</div>
+								<div class="card-body text-uppercase">
+									<div class="card-meta text-muted">
+										<span class="meta-date">feb 22, 2023</span>
+										<span class="meta-category">- Gadgets</span>
+									</div>
+									<h3 class="card-title">
+										<a href="#">
+											<xsl:value-of select="@Nombre"></xsl:value-of>
+										</a>
+									</h3>
+								</div>
+							</div>
+
+						</xsl:for-each>
+
 					</div>
 				</div>
-				<div class="post-grid d-flex flex-wrap justify-content-between">
-					<xsl:for-each select="Productos/Categoria[@Nombre = 'Servicios Técnicos']/Servicio">
-
-						<div class="col-lg-4 col-sm-12">
-							<div class="card border-none me-3">
-								<div class="card-image">
-									<img src="{Imagen}" alt="{Imagen}" class="img-fluid2" id="service"/>
-								</div>
-							</div>
-							<div class="card-body text-uppercase">
-								<div class="card-meta text-muted">
-									<span class="meta-date">feb 22, 2023</span>
-									<span class="meta-category">- Gadgets</span>
-								</div>
-								<h3 class="card-title">
-									<a href="#">
-										<xsl:value-of select="@Nombre"></xsl:value-of>
-									</a>
-								</h3>
-							</div>
-						</div>
-
-					</xsl:for-each>
-					
-				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 
 	</xsl:template>
@@ -755,31 +755,31 @@
 				<div id="cart-total"></div>
 			</div>
 		</section>
-		</xsl:template>
+	</xsl:template>
 	<xsl:template name="multimedia">
-	<div class="container">
-		<!--Audio-->
-		<section class="tm-section-row p-5">
-			<br></br>
-			<br></br>
-			<h2>Audio</h2>
-			<div id="Audio" style="width:100%">
-				<audio controls="true" style="width:100%" autoplay="autoplay">
-					<source src="assets/media/droele.mp3"></source>
-				</audio>
-			</div>
-		</section>
-		<!--Video-->
-		<section class="tm-section-row p-5">
+		<div class="container">
+			<!--Audio-->
+			<section class="tm-section-row p-5">
+				<br></br>
+				<br></br>
+				<h2>Audio</h2>
+				<div id="Audio" style="width:100%">
+					<audio controls="true" style="width:100%" autoplay="autoplay">
+						<source src="assets/media/droele.mp3"></source>
+					</audio>
+				</div>
+			</section>
+			<!--Video-->
+			<section class="tm-section-row p-5">
 
-			<h2>Video</h2>
-			<div id="Video" style="width:100%">
-				<video controls="true" width="100%" poster="assets/img/gallery/gallery-2.jpg">
-					<source src="assets/media/s24.mp4"></source>
-				</video>
-			</div>
-		</section>
-	</div>
+				<h2>Video</h2>
+				<div id="Video" style="width:100%">
+					<video controls="true" width="100%" poster="assets/img/gallery/gallery-2.jpg">
+						<source src="assets/media/s24.mp4"></source>
+					</video>
+				</div>
+			</section>
+		</div>
 	</xsl:template>
 	<xsl:template name="carrito">
 		<link rel="stylesheet" type="text/css" href="assets/css/DragAndDrop.css"/>
@@ -795,7 +795,7 @@
 					<h2>Productos</h2>
 					<div id="productos" class="product-container">
 						<xsl:for-each select="Productos/Categoria/Producto">
-							<div class="producto" id="producto{@ID}" data-precio ="{Precio}"  draggable="true" ondragstart="start(event)">
+							<div class="producto" id="producto{@ID}" data-precio ="{Precio}"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
 								<img src="{Imagen}" alt="{Imagen}" class="product" />
 								<span class="product-name">
 									<xsl:value-of select="@Nombre"/>
@@ -807,21 +807,22 @@
 
 				<div class="col-md-4">
 					<h2>Carrito</h2>
-					<div id="carrito" ondragenter="enter(event)" ondragover="return false" ondrop="drop(event)" class="carrito-container">
-						<p>Arrastra los productos aquí</p>
+					<div id="carrito" ondragenter="return enter(event)" ondragover="return false" ondragleave="return leave(event)" ondrop="return clone(event)"  class="carrito-container">
+
 					</div>
-				<div id="carrito-Total"></div>
-				
+
 					<h2>Eliminar</h2>
-					<div id="carritoE" ondragenter="enter(event)" ondragover="return false" ondrop="drop(event)" class="carrito-eliminar">
-						<p>Arrastra los productos aquí para eliminar </p>
+					<div id="carritoE" ondragenter=" return enter(event)" ondragover="return false"  ondragleave="return leave(event)" ondrop="return remove(event)" class="carrito-eliminar">
+
 					</div>
+
+					<div id="carrito-Total"></div>
 					<div id="carrito-Total"></div>
 
 				</div>
 			</div>
 		</div>
-			
+
 
 	</xsl:template>
 </xsl:stylesheet>
